@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Management</title>
+    <style>
+        body {
+            background-image: url('assets/images/bg.jpg');
+            background-size: cover;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .title-background, .task-list-background {
+            background-color: #F5DEB3;
+        }
+        h1 {
+            color: #333;
+        }
+        #task-form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 60px;
+            background-color: #98AFC7;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #E5E4E2;
+            border-radius: 5px;
+            background-color: #E6E6FA;
+        }
+        select {
+            height: 40px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #E5E4E2;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            text-align: left;
+            padding: 10px;
+            background-color: #E5E4E2;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .task-list {
+            text-align: left;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="title-background">
+        <h1>TASK MANAGEMENT AND PROGRESS TRACKER</h1> 
+    </div>
+    <form id="task-form">
+        <label for="task-title">Task Title:</label>
+        <input type="text" id="task-title" required><br><br>
+        
+        <label for="task-description">Task Description:</label>
+        <textarea id="task-description" rows="4" required></textarea><br><br>
+        
+        <label for="priority">Priority:</label>
+        <select id="priority">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select><br><br>
+        
+        <label for="due-date">Due Date:</label>
+        <input type="date" id="due-date" required><br><br>
+        
+        <label for="status">Status:</label>
+        <select id="status">
+            <option value="To-Do">To-Do</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+        </select><br><br>
+        
+        <button type="button" onclick="createTask()">Create Task</button>
+    </form>
+    
+    <div class="task-list-background">
+        <h2>Task List</h2>
+    </div>
+    <ul id="task-list" class="task-list"></ul>
+    
+    <script>
+        function createTask() {
+            const title = document.getElementById("task-title").value;
+            const description = document.getElementById("task-description").value;
+            const priority = document.getElementById("priority").value;
+            const dueDate = document.getElementById("due-date").value;
+            const status = document.getElementById("status").value;
+            
+            const task = {
+                title,
+                description,
+                priority,
+                dueDate,
+                status
+            };
+            console.log("Creating task:", task);
+            
+            // Clear the form fields.
+            document.getElementById("task-form").reset();
+        }
+    </script>
+</body>
+</html>
