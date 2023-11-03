@@ -13,8 +13,7 @@ Task Progress Tracker is a web application that allows users to create, manage, 
 5. [Frontend and Backend Choices](#frontend-and-backend-choices)
 6. [Database](#database)
 7. [References and Resources](#references-and-resources)
-8. [Code Documentation](#code-documentation)
-9. [Running Tests](#running-tests)
+8. [Running Tests](#running-tests)
 
 ## Project Overview
 
@@ -101,6 +100,6 @@ Make sure to set up and configure your database before running the application.
 ## Running Tests
 Instructions for running tests should be provided here if you have implemented tests for your project.
 
-In this template, replace placeholders like `your-repo-url` with the actual details specific to your project. Additionally, provide instructions for running tests if you have implemented testing in your project. This README will serve as a valuable reference for anyone using or contributing to your project.
+In this template, replace placeholders like `your-repo-url` with the actual details specific to your project. Additionally, provide instructions for running tests if implemented testing in the project. 
 
 
