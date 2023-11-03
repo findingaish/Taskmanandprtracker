@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Progress Tracker</title>
+    <style>
+        body {
+            background-image: url('assets/images/progress.jpg');
+            background-size: cover;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .title-background, .task-list-background {
+            background-color: #F5DEB3;
+        }
+        h1 {
+            color: #F5DEB3;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+        td {
+            color: white;
+        }
+
+        .filters {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Task Progress Tracker</h1>
+    
+    <div class="filters">
+        <label for="status-filter" style="color: white">Filter by Status:</label>
+        <select id="status-filter">
+            <option value="all">All</option>
+            <option value="ToDo">To-Do</option>
+            <option value="InProgress">In Progress</option>
+            <option value="Completed">Completed</option>
+        </select>
+    </div>
+    
+    <table id="task-table">
+        <thead>
+            <tr>
+                <th>Task Title</th>
+                <th>Priority</th>
+                <th>Due Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="task-list">
+            <!-- Task data will be dynamically populated here -->
+        </tbody>
+    </table>
+    
+    <div id="status-summary" style=" color: white">
+        <!-- Task count summary will be displayed here -->
+    </div>
+    <canvas id="task-completion-chart" width="500" height="150"></canvas>
+    <canvas id="task-priority-chart" width="50" height="50"></canvas>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+        
+        // Task data sample (can be fetched by API)
+        const tasks = [
+            { title: 'Task 1', priority: 'High', dueDate: '2023-11-05', status: 'ToDo' },
+            { title: 'Task 2', priority: 'Low', dueDate: '2023-11-07', status: 'InProgress' },
+            { title: 'Task 3', priority: 'Medium', dueDate: '2023-11-10', status: 'Completed' },
+            // More tasks can be added as per the need
+        ];
+
+        // Function to create the task completion chart
+        function createTaskCompletionChart() {
+            // Sample data for the chart (tasks completed over time)
+            const taskCompletionData = {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'], // Labels
+                datasets: [
+                    {
+                        label: 'Tasks Completed',
+                        data: [3, 6, 12, 8, 10], // Sample data(Replace with the actual data)
+                        backgroundColor: ['rgba(218, 214, 126, 0.8)', 
+                                         'rgba(121, 229, 181, 0.8)',
+                                         'rgba(70, 193, 215, 0.8)'],// Bar color
+                        borderColor: 'rgba(75, 192, 192, 1)', // Border color
+                        borderWidth: 1,
+                    },
+                ],
+            };
+
+            const ctx = document.getElementById('task-completion-chart').getContext('2d');
+            
+            const taskCompletionChart = new Chart(ctx, {
+                type: 'bar', 
+                data: taskCompletionData,
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                        },
+                    },
+                },
+            });
+        }
+
+        // Function to create the task priority pie chart
+        function createTaskPriorityChart() {
+            const priorityData = {
+                labels: ['Low', 'Medium', 'High'], // Priority levels
+                datasets: [
+                    {
+                        label: 'Priority Distribution',
+                        data: [5, 8, 4], // Replace with the actual data
+                        backgroundColor: ['rgba(146, 226, 85, 0.8)', 'rgba(16, 156, 195, 0.8)', 'rgba(230, 95, 50, 0.8)'], // Colors
+                        borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)'], // Border colors
+                        borderWidth: 1,
+                    },
+                ],
+            };
+            const ctx = document.getElementById('task-priority-chart').getContext('2d');
+
+            const taskPriorityChart = new Chart(ctx, {
+                type: 'pie',
+                data: priorityData,
+            });
+        }
+
+        // Function to update the task table based on the selected status filter
+        function updateTaskTable() {
+            const statusFilter = document.getElementById('status-filter').value;
+            const taskList = document.getElementById('task-list');
+            taskList.innerHTML = ''; // Clear the table
+
+            tasks.forEach(task => {
+                if (statusFilter === 'all' || task.status === statusFilter) {
+                    const row = taskList.insertRow();
+                    row.insertCell(0).textContent = task.title;
+                    row.insertCell(1).textContent = task.priority;
+                    row.insertCell(2).textContent = task.dueDate;
+                    row.insertCell(3).textContent = task.status;
+                }
+            });
+        }
+
+        // Function to update the task count summary
+        function updateTaskCountSummary() {
+            const statusSummary = document.getElementById('status-summary');
+            const summary = {};
+
+            tasks.forEach(task => {
+                if (summary[task.status]) {
+                    summary[task.status]++;
+                } else {
+                    summary[task.status] = 1;
+                }
+            });
+
+            statusSummary.innerHTML = 'Task Count Summary: ';
+            for (const status in summary) {
+                statusSummary.innerHTML += `${status}: ${summary[status]}, `;
+            }
+        }
+
+        // Initial update of the task table and count summary
+        updateTaskTable();
+        updateTaskCountSummary();
+
+        //Create task completion chart
+        createTaskCompletionChart();
+
+        // Create task priority chart
+        createTaskPriorityChart();
+
+
+        // Add an event listener for the status filter
+        document.getElementById('status-filter').addEventListener('change', () => {
+            updateTaskTable();
+            updateTaskCountSummary();
+        });
+        
+        
+    </script>
+</body>
+</html>
