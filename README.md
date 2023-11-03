@@ -64,10 +64,9 @@ Data Visualizations:
 3. Set up your database and configure the connection in server.js.
 4. Install frontend dependencies
 5. Start the backend and frontend servers:
-# Inside the 'backend' directory
+Inside the 'backend' directory
 npm start
-
-# Inside the 'frontend' directory
+Inside the 'frontend' directory
 npm start
 6. Access the application at http://localhost:3000 (or the specified port).
 
@@ -86,21 +85,22 @@ Task Completion Progress Chart: A chart displaying the progress of tasks over ti
 Task Priority Distribution Pie Chart: A Pie Chart showing the distribution of tasks by priority.
 
 Frontend and Backend Choices
-Frontend Library: [Link Text][https://react.dev/]
-Backend Technology: Node.js with Express.js
-Database: Your choice of RDBMS (MySQL, PostgreSQL)
-Database
-You have the flexibility to select any RDBMS for storing task data. Make sure to set up and configure your database before running the application.
+Frontend Library: [React](https://react.dev/)
+Backend Technology: [Node.js](https://nodejs.org/) with [Express.js](https://expressjs.com/)
+Database: MySQL
 
-References and Resources
-React Documentation
-Node.js Documentation
-Express.js Documentation
-MySQL Documentation
-Code Documentation
-For code documentation, you can refer to the inline comments in the project source code.
+## Database
+Make sure to set up and configure your database before running the application.
 
-Running Tests
+## References and Resources
+[React Documentation](https://legacy.reactjs.org/docs/getting-started.html)
+[Node.js Documentation](https://nodejs.org/docs/latest-v14.x/api/)
+[Express.js Documentation](https://expressjs.com/en/4x/api.html)
+[MySQL Documentation](https://dev.mysql.com/doc/)
+
+## Running Tests
 Instructions for running tests should be provided here if you have implemented tests for your project.
+
+In this template, replace placeholders like `your-repo-url` with the actual details specific to your project. Additionally, provide instructions for running tests if you have implemented testing in your project. This README will serve as a valuable reference for anyone using or contributing to your project.
 
 
