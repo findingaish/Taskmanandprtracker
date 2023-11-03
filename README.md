@@ -84,19 +84,19 @@ Task Completion Progress Chart: A chart displaying the progress of tasks over ti
 
 Task Priority Distribution Pie Chart: A Pie Chart showing the distribution of tasks by priority.
 
-Frontend and Backend Choices
-Frontend Library: [React](https://react.dev/)
-Backend Technology: [Node.js](https://nodejs.org/) with [Express.js](https://expressjs.com/)
-Database: MySQL
+## Frontend and Backend Choices
+- Frontend Library: [React](https://react.dev/)
+- Backend Technology: [Node.js](https://nodejs.org/) with [Express.js](https://expressjs.com/)
+- Database: MySQL
 
 ## Database
 Make sure to set up and configure your database before running the application.
 
 ## References and Resources
-[React Documentation](https://legacy.reactjs.org/docs/getting-started.html)
-[Node.js Documentation](https://nodejs.org/docs/latest-v14.x/api/)
-[Express.js Documentation](https://expressjs.com/en/4x/api.html)
-[MySQL Documentation](https://dev.mysql.com/doc/)
+- [React Documentation](https://legacy.reactjs.org/docs/getting-started.html)
+- [Node.js Documentation](https://nodejs.org/docs/latest-v14.x/api/)
+- [Express.js Documentation](https://expressjs.com/en/4x/api.html)
+- [MySQL Documentation](https://dev.mysql.com/doc/)
 
 ## Running Tests
 Instructions for running tests should be provided here if you have implemented tests for your project.
