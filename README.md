@@ -1,6 +1,6 @@
 # Task-Management-and-Progress-Tracker
 
-Task Progress Tracker is a web application that allows users to create, manage, and track tasks. This README provides an overview of the project, instructions for setting it up and running it, references/resources, and code documentation.
+Task Progress Tracker is a comprehensive web application designed to assist users in the creation, management, and monitoring of their tasks. This README offers an extensive overview of the project, complete with instructions for configuring and running it. It also includes a list of references and resources for further context, as well as in-depth documentation for the codebase.
 
 ## Table of Contents
 
@@ -19,7 +19,7 @@ Task Progress Tracker is a web application that allows users to create, manage, 
 
 The Task Progress Tracker is a web application designed to help users manage and track their tasks. It consists of two screens:
 
-**Screen 1: Task Creation and Management**
+**1. Task Creation and Management**
 
 In this screen, users can create and manage tasks. They can provide the following information for each task:
 - Task Title
@@ -35,7 +35,7 @@ Backend Requirements:
 - **Get Task by ID** (GET /api/tasks/:id): Retrieve a specific task by its unique identifier.
 - **Update Task Status** (PATCH /api/tasks/:id/status): Update the status of a specific task.
 
-**Screen 2: Task Progress Tracker**
+**2: Task Progress Tracker**
 
 In this screen, users can track their task progress. It includes:
 - A table listing all tasks with Task Title, Priority, Due Date, and Status.
@@ -44,7 +44,7 @@ In this screen, users can track their task progress. It includes:
 
 Data Visualizations:
 
-- **Task Completion Progress Chart**: A chart (Bar Chart or Line Chart) displaying the progress of tasks over time.
+- **Task Completion Progress Chart**: A chart (Bar Chart) displaying the progress of tasks over time.
 - **Task Priority Distribution Pie Chart**: A Pie Chart showing the distribution of tasks by priority.
 
 ## Getting Started
