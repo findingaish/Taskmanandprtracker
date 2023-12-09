@@ -1,4 +1,4 @@
-# Task-Management-and-Progress-Tracker
+# Task Management and Progress Tracker
 
 Task Progress Tracker is a comprehensive web application designed to assist users in the creation, management, and monitoring of their tasks. This README offers an extensive overview of the project, complete with instructions for configuring and running it. It also includes a list of references and resources for further context, as well as in-depth documentation for the codebase.
 
